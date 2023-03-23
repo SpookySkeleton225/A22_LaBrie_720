@@ -49,7 +49,8 @@ public class GameController implements ActionListener {
 		System.out.println("TestModel");
 		System.out.println("TestView");
 		this.view = view;
-		
+		view.setController(this);
+		view.ViewStart();
 		System.out.println("TestView");
 		this.timer = new ControllableTimer(view);
 
@@ -84,86 +85,60 @@ public class GameController implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		 System.out.println(e.getActionCommand());
+		System.out.println(e.getActionCommand());
 		if (e.getActionCommand().equals("btn[0][0]")) {
-			System.out.println("Test2");
-			this.view.setPoints(this.model.move(0, 0, mrkMode));
-			System.out.println("Test3");
-		}
-		if (e.getActionCommand().equals("btn[0][1]")) {
+			view.setPoints(model.move(0, 0, mrkMode));
+		} else if (e.getActionCommand().equals("btn[0][1]")) {
 			view.setPoints(model.move(0, 1, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[0][2]")) {
+		} else if (e.getActionCommand().equals("btn[0][2]")) {
 			view.setPoints(model.move(0, 2, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[0][3]")) {
+		} else if (e.getActionCommand().equals("btn[0][3]")) {
 			view.setPoints(model.move(0, 3, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[0][4]")) {
+		} else if (e.getActionCommand().equals("btn[0][4]")) {
 			view.setPoints(model.move(0, 4, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[1][0]")) {
+		} else if (e.getActionCommand().equals("btn[1][0]")) {
 			view.setPoints(model.move(1, 0, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[1][1]")) {
+		} else if (e.getActionCommand().equals("btn[1][1]")) {
 			view.setPoints(model.move(1, 1, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[1][2]")) {
+		} else if (e.getActionCommand().equals("btn[1][2]")) {
 			view.setPoints(model.move(1, 2, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[1][3]")) {
+		} else if (e.getActionCommand().equals("btn[1][3]")) {
 			view.setPoints(model.move(1, 3, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[1][4]")) {
+		} else if (e.getActionCommand().equals("btn[1][4]")) {
 			view.setPoints(model.move(1, 4, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[2][0]")) {
+		} else if (e.getActionCommand().equals("btn[2][0]")) {
 			view.setPoints(model.move(2, 0, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[2][1]")) {
+		} else if (e.getActionCommand().equals("btn[2][1]")) {
 			view.setPoints(model.move(2, 1, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[2][2]")) {
+		} else if (e.getActionCommand().equals("btn[2][2]")) {
 			view.setPoints(model.move(2, 2, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[2][3]")) {
+		} else if (e.getActionCommand().equals("btn[2][3]")) {
 			view.setPoints(model.move(2, 3, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[2][4]")) {
+		} else if (e.getActionCommand().equals("btn[2][4]")) {
 			view.setPoints(model.move(2, 4, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[3][0]")) {
+		} else if (e.getActionCommand().equals("btn[3][0]")) {
 			view.setPoints(model.move(3, 0, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[3][1]")) {
+		} else if (e.getActionCommand().equals("btn[3][1]")) {
 			view.setPoints(model.move(3, 1, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[3][2]")) {
+		} else if (e.getActionCommand().equals("btn[3][2]")) {
 			view.setPoints(model.move(3, 2, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[3][3]")) {
+		} else if (e.getActionCommand().equals("btn[3][3]")) {
 			view.setPoints(model.move(3, 3, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[3][4]")) {
+		} else if (e.getActionCommand().equals("btn[3][4]")) {
 			view.setPoints(model.move(3, 4, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[4][0]")) {
+		} else if (e.getActionCommand().equals("btn[4][0]")) {
 			view.setPoints(model.move(4, 0, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[4][1]")) {
+		} else if (e.getActionCommand().equals("btn[4][1]")) {
 			view.setPoints(model.move(4, 1, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[4][2]")) {
+		} else if (e.getActionCommand().equals("btn[4][2]")) {
 			view.setPoints(model.move(4, 2, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[4][3]")) {
+		} else if (e.getActionCommand().equals("btn[4][3]")) {
 			view.setPoints(model.move(4, 3, mrkMode));
-		}
-		if (e.getActionCommand().equals("btn[4][4]")) {
+		} else if (e.getActionCommand().equals("btn[4][4]")) {
 			view.setPoints(model.move(4, 4, mrkMode));
 		} else if (e.getActionCommand().equals("TimerReset")) {
 			timer.setStatus(ControllableTimer.RESET);
-			System.out.print("test");
+			//System.out.print("test");
 		}
 	}
 }

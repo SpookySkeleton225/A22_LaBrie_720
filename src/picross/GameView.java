@@ -62,7 +62,7 @@ public class GameView extends JFrame {
 	/**
 	 * points string.
 	 */
-	private String points = "0";
+	private String points = "0   ";
 	
 	/**
 	 * btnBoard, to hold the buttons of the board.
@@ -129,6 +129,10 @@ public class GameView extends JFrame {
 	 * Constructor for GameView class.
 	 */
 	public GameView() {
+		
+	}
+	
+	public void ViewStart() {
 		/**
 		 * Image icon for the picture of the picross logo.
 		 */
@@ -177,7 +181,7 @@ public class GameView extends JFrame {
 		/**
 		 * Label to display the score.
 		 */
-		JLabel score = new JLabel(points);
+		//JLabel score = new JLabel(points);
 		
 		/**
 		 * mrkBtn for turning mrkMode on or off.
@@ -283,7 +287,7 @@ public class GameView extends JFrame {
 		brdPanel.setBackground(Color.gray);
 		brdPanel.setLayout(grid1);
 		
-		//
+		fillBoard(gameController, brdPanel, brdSize, btnBoard);
 		
 		/**
 		 * Setting background color for mrkBtn.
@@ -298,7 +302,7 @@ public class GameView extends JFrame {
 		//mrkPanel.add(mrkLabel);
 		mrkPanel.add(mrkBtn);
 		
-		t1.addActionListener(new GameController());
+		t1.addActionListener(gameController);
 		t1.setActionCommand("TimerReset");
 		
 		menu.add(t1);
@@ -357,8 +361,11 @@ public class GameView extends JFrame {
 	 * @param score
 	 * Takes in the new score.
 	 */
-	public void setPoints(String score) {
-		points = score;
+	public void setPoints(String newPoints) {
+		System.out.println(newPoints);
+		score.setText(newPoints);
+		//score.paintImmediately(score.getVisibleRect());
+		
 	}
 	
 	/**
@@ -379,7 +386,7 @@ public class GameView extends JFrame {
 	 * @param brdPanel
 	 * unused.
 	 */
-	public void fillBoard(GameController controller, JPanel brdPanel) {
+	public static void fillBoard(GameController controller, JPanel brdPanel, int brdSize, JButton[][] btnBoard) {
 		/**
 		 * Populating the board with buttons. Works with different numbers but no option to change them
 		 * is implemented yet.

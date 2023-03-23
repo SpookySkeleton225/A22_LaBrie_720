@@ -69,6 +69,10 @@ public class GameModel {
     	this.score = score;
     }
     
+    public void modBtn(int x, int y, int flag) {
+    	
+    }
+    
     /**
      * Worker method to randomly generate a game.
      * @param board
@@ -139,11 +143,13 @@ public class GameModel {
     			 * Incrementing score.
     			 */
     			score++;
-    		
+    		else {
+    			score--;
+    		}
     		/**
     		 * Toggling part of boardData.
     		 */
-    		toggle(boardData[x][y]);
+    		toggle(boardData, x, y);
     		
     		/**
     		 * Setting new score to score, as a String.
@@ -164,8 +170,8 @@ public class GameModel {
      * @return
      * Method returns a flipped boolean.
      */
-    static Boolean toggle(boolean b) {
-    	return !b;
+    static void toggle(boolean[][] board, int x, int y) {
+    	board[x][y] = !board[x][y];
     }
     
     /**
